@@ -1,0 +1,159 @@
+//- Навігація шапки
+-
+  const navLinks = [
+    { href: '#home', text: 'Home', active: true },
+    { href: '#works', text: 'Works', active: false },
+    { href: '#services', text: 'Services', active: false },
+    { href: '#journal', text: 'Journal', active: false },
+    { href: '#contact', text: 'Contact', active: false }
+  ]
+
+//- Категорії фільтра портфоліо (для радіокнопок і чіпсів на :checked)
+-
+  const filterCategories = [
+    { id: 'filter-all', value: 'all', label: 'All', checked: true },
+    { id: 'filter-branding', value: 'branding', label: 'Branding', checked: false },
+    { id: 'filter-identity', value: 'identity', label: 'Identity', checked: false },
+    { id: 'filter-web', value: 'web', label: 'Web Design', checked: false },
+    { id: 'filter-print', value: 'print', label: 'Print', checked: false }
+  ]
+
+//- 9 робіт портфоліо (зберігаємо правило 5 / 8 / 9 карток з лаби №7)
+-
+  const works = [
+    { title: 'Pure Bloom', category: 'branding', image: 'work-01', alt: 'Pure Bloom cosmetic packaging' },
+    { title: 'Nordic Print', category: 'print', image: 'work-02', alt: 'Nordic minimal poster series' },
+    { title: 'Urban Identity', category: 'identity', image: 'work-03', alt: 'Urban brand identity stationery' },
+    { title: 'Studio Portal', category: 'web', image: 'work-04', alt: 'Creative studio responsive website' },
+    { title: 'Craft Coffee', category: 'branding', image: 'work-05', alt: 'Artisan coffee branding' },
+    { title: 'Mono Magazine', category: 'print', image: 'work-06', alt: 'Editorial print layout' },
+    { title: 'Veloce App', category: 'web', image: 'work-07', alt: 'Cycling route web interface' },
+    { title: 'Kova Studio', category: 'identity', image: 'work-08', alt: 'Architectural firm visual identity' },
+    { title: 'botanica', category: 'branding', image: 'work-09', alt: 'Organic skincare brand design' }
+  ]
+
+//- 4 послуги агенції
+-
+  const services = [
+    {
+      icon: 'branding',
+      title: 'Branding',
+      text: 'Building memorable brand strategies, visual systems, and cohesive tone of voice for modern businesses.'
+    },
+    {
+      icon: 'web',
+      title: 'Web Design',
+      text: 'Designing clean, responsive, and user-centered interfaces tailored for seamless digital experiences.'
+    },
+    {
+      icon: 'identity',
+      title: 'Visual Identity',
+      text: 'Crafting timeless logos, typography guidelines, and stationery assets that stand out across all media.'
+    },
+    {
+      icon: 'print',
+      title: 'Print & Packaging',
+      text: 'Creating tactile editorial layouts, packaging solutions, and high-impact promotional materials.'
+    }
+  ]
+
+//- 4 показники статистики
+-
+  const stats = [
+    { value: '148', label: 'Projects Completed' },
+    { value: '96', label: 'Happy Clients' },
+    { value: '12', label: 'Design Awards' },
+    { value: '7+', label: 'Years of Experience' }
+  ]
+
+//- Записи журналу
+-
+  const journalPosts = [
+    {
+      date: 'November 12, 2026',
+      datetime: '2026-11-12',
+      category: 'Design Process',
+      title: 'Minimalism in Modern Brand Identity',
+      excerpt: 'How stripping away visual clutter helps brands communicate clarity and build lasting trust.',
+      image: 'journal-01',
+      alt: 'Minimalist brand stationery on desk'
+    },
+    {
+      date: 'October 28, 2026',
+      datetime: '2026-10-28',
+      category: 'Typography',
+      title: 'Pairing Display and Sans-Serif Fonts',
+      excerpt: 'Practical rules for balancing expressive headlines with highly readable body copy on the web.',
+      image: 'journal-02',
+      alt: 'Typography specimen book open'
+    },
+    {
+      date: 'October 05, 2026',
+      datetime: '2026-10-05',
+      category: 'Web Craft',
+      title: 'Designing Grid Systems That Scale',
+      excerpt: 'Approaching mobile-first layouts with fluid proportions and modular CSS architecture.',
+      image: 'journal-03',
+      alt: 'Wireframe sketches and grid layout'
+    },
+    {
+      date: 'September 19, 2026',
+      datetime: '2026-09-19',
+      category: 'Packaging',
+      title: 'Sustainable Materials in Print Design',
+      excerpt: 'Exploring textured recycled papers and eco-friendly inks for boutique product packaging.',
+      image: 'journal-04',
+      alt: 'Eco-friendly kraft packaging boxes'
+    }
+  ]
+
+//- 6 логотипів клієнтів
+-
+  const clients = [
+    { name: 'Nordic Studio', icon: 'client-1' },
+    { name: 'Veloce', icon: 'client-2' },
+    { name: 'Botanica', icon: 'client-3' },
+    { name: 'Kova Arch', icon: 'client-4' },
+    { name: 'Pure Bloom', icon: 'client-5' },
+    { name: 'Mono Press', icon: 'client-6' }
+  ]
+
+//- Соцмережі для футера
+-
+  const socials = [
+    { name: 'Dribbble', icon: 'dribbble', href: 'https://dribbble.com' },
+    { name: 'Behance', icon: 'behance', href: 'https://behance.net' },
+    { name: 'Instagram', icon: 'instagram', href: 'https://instagram.com' },
+    { name: 'LinkedIn', icon: 'linkedin', href: 'https://linkedin.com' }
+  ]
+  //- Колонки посилань футера
+-
+  const footerColumns = [
+    {
+      title: 'Navigation',
+      links: [
+        { text: 'Home', href: '#home' },
+        { text: 'Works', href: '#works' },
+        { text: 'Services', href: '#services' },
+        { text: 'Journal', href: '#journal' }
+      ]
+    },
+    {
+      title: 'Services',
+      links: [
+        { text: 'Branding', href: '#services' },
+        { text: 'Web Design', href: '#services' },
+        { text: 'Visual Identity', href: '#services' },
+        { text: 'Print & Packaging', href: '#services' }
+      ]
+    },
+    {
+      title: 'Studio',
+      links: [
+        { text: 'About Us', href: '#about' },
+        { text: 'Clients', href: '#clients' },
+        { text: 'Careers', href: '#contact' },
+        { text: 'Contact', href: '#contact' }
+      ]
+    }
+  ]

@@ -1,0 +1,43 @@
+.container
+  .footer-cta#contact
+    .footer-cta__info
+      h2.footer-cta__title Ready to start a project?
+      p.footer-cta__text Tell us about your brand goals and we will get back to you within 24 hours.
+    form.contact-form(action="#" method="post")
+      .contact-form__row
+        label.visually-hidden(for="contact-name") Your Name
+        input#contact-name.contact-form__input(type="text" name="name" placeholder="Your Name" required)
+        label.visually-hidden(for="contact-email") Your Email
+        input#contact-email.contact-form__input(type="email" name="email" placeholder="Your Email" required)
+      label.visually-hidden(for="contact-message") Project Details
+      textarea#contact-message.contact-form__textarea(name="message" rows="3" placeholder="Tell us about your project..." required)
+      +btn('Send Message', null, 'teal')(type="submit")
+
+  .footer-main
+    .footer-brand
+      a.logo.logo--light(href="#home")
+        span.logo__mark K
+        span.logo__text Keepsake
+      p.footer-brand__desc Independent digital &amp; branding studio crafting meaningful identities since 2019.
+
+    .footer-nav
+      each col in footerColumns
+        .footer-nav__col
+          h3.footer-nav__heading #{col.title}
+          ul.footer-nav__list
+            each link in col.links
+              li.footer-nav__item
+                a.footer-nav__link(href=link.href) #{link.text}
+
+  .footer-bottom
+    p.footer-bottom__copy &copy; 2026 Keepsake Agency. All rights reserved.
+    ul.socials
+      each social in socials
+        li.socials__item
+          a.socials__link(
+            href=social.href
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label=social.name
+          )
+            +icon(social.icon, 20)

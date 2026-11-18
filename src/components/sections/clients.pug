@@ -1,0 +1,10 @@
+section#clients.clients.section
+  .container
+    .section-header
+      span.section-header__label Trusted By
+      h2.section-header__title Our Clients
+
+    ul.clients-logos
+      each client in clients
+        li.clients-logos__item(aria-label=client.name)
+          +icon(client.icon, 120)(height="40")

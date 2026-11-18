@@ -1,0 +1,22 @@
+mixin btn(text, href, variant = 'primary')
+  - let variantClass = 'btn--primary'
+  case variant
+    when 'outline'
+      - variantClass = 'btn--outline'
+    when 'teal'
+      - variantClass = 'btn--teal'
+    default
+      - variantClass = 'btn--primary'
+
+  if href
+    a.btn(href=href, class=variantClass)&attributes(attributes)
+      if block
+        block
+      else
+        | #{text}
+  else
+    button.btn(type="button", class=variantClass)&attributes(attributes)
+      if block
+        block
+      else
+        | #{text}

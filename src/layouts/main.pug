@@ -1,21 +1,26 @@
 doctype html
 html(lang="en")
-    head
-        block meta
-            meta(charset="utf-8")
-            meta(name="viewport" content="width=device-width, initial-scale=1")
-        block title
-            title Keepsake
-        block fonts
-        block main-scripts
-        block styles
-            link(rel="stylesheet" href="/src/styles/main.scss")
-    body
-        block data
-        block header
-            header.page-header header
-        block content
-            main.page-main content
-        block footer
-            footer.page-footer footer
-        block add-scripts
+  head
+    block meta
+      meta(charset="utf-8")
+      meta(name="viewport" content="width=device-width, initial-scale=1")
+    block title
+      title Keepsake — Digital & Branding Agency
+    block fonts
+    block main-scripts
+    block styles
+      link(rel="stylesheet" href="/src/styles/main.scss")
+  body
+    include ../includes/svg-sprite
+    block mixins
+    block data
+    block header
+      header.page-header
+        block header-content
+    block content
+      main.page-main
+        block main-content
+    block footer
+      footer.page-footer
+        block footer-content
+    block add-scripts
