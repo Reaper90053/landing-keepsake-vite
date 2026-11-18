@@ -12,9 +12,9 @@ function srcsetAssetsPlugin() {
     generateBundle(_, bundle) {
       const emitted = new Map()
 
-      for (const file of Object.values(bundle)) {
+      for (const [key, file] of Object.entries(bundle)) {
         if (file.type === 'asset' && file.fileName.endsWith('.html')) {
-          file.source = String(file.source).replace(/srcset="([^"]+)"/g, (_, srcsetValue) => {
+          const updatedHtml = String(file.source).replace(/srcset="([^"]+)"/g, (_, srcsetValue) => {
             const updated = srcsetValue.replace(
               /\/src\/assets\/images\/([^\s,"]+)/g,
               (match, imgName) => {
@@ -36,15 +36,17 @@ function srcsetAssetsPlugin() {
             )
             return `srcset="${updated}"`
           })
-        }
-      }
 
-      if (bundle['index.pug.html']) {
-        bundle['index.html'] = {
-          ...bundle['index.pug.html'],
-          fileName: 'index.html',
+          if (key === 'index.pug.html') {
+            this.emitFile({
+              type: 'asset',
+              fileName: 'index.html',
+              source: updatedHtml,
+            })
+          } else {
+            file.source = updatedHtml
+          }
         }
-        delete bundle['index.pug.html']
       }
     },
   }
