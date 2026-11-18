@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node -e \"const fs=require('fs'),f=['dist/index.pug.html','dist/pages/index.pug.html','dist/pages/index.html'].find(fs.existsSync);if(f)fs.copyFileSync(f,'dist/index.html')\"",
     "preview": "vite preview",
     "images": "node scripts/optimize-images.js",
     "format": "prettier --write .",
