@@ -1,1 +1,136 @@
+@use '../utils' as *;
 
+.page-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-bg-primary);
+}
+
+.header {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: rem(72);
+    gap: rem(16);
+  }
+
+  &__burger-checkbox {
+    @include visually-hidden;
+  }
+
+  &__burger-btn {
+    @include flex-center(column, rem(5));
+    width: rem(40);
+    height: rem(40);
+    cursor: pointer;
+    z-index: 110;
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  &__burger-line {
+    width: rem(24);
+    height: 2px;
+    background-color: var(--color-text-primary);
+    transition: transform $transition-base, opacity $transition-base;
+  }
+
+  &__actions {
+    display: none;
+
+    @include mq(lg) {
+      display: block;
+    }
+  }
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(10);
+  font-family: $font-heading;
+  font-size: rem(22);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  &__mark {
+    @include flex-center;
+    width: rem(34);
+    height: rem(34);
+    border-radius: rem(4);
+    color: var(--color-text-light);
+    background-color: var(--color-accent);
+  }
+
+  &--light {
+    color: var(--color-text-light);
+  }
+}
+
+.nav {
+  position: fixed;
+  inset: rem(72) 0 0;
+  padding: rem(32) var(--container-padding);
+  background-color: var(--color-bg-primary);
+  transform: translateX(100%);
+  transition: transform $transition-base;
+
+  @include mq(md) {
+    position: static;
+    inset: auto;
+    padding: 0;
+    background-color: transparent;
+    transform: none;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+
+    @include mq(md) {
+      flex-direction: row;
+      align-items: center;
+      gap: rem(28);
+    }
+  }
+
+  &__link {
+    position: relative;
+    font-family: $font-heading;
+    font-size: rem(15);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color $transition-base;
+
+    @include focus-ring;
+
+    &:hover,
+    &--active {
+      color: var(--color-accent);
+    }
+  }
+}
+
+.header__burger-checkbox:checked ~ .nav {
+  transform: translateX(0);
+}
+
+.header__burger-checkbox:checked + .header__burger-btn .header__burger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.header__burger-checkbox:checked + .header__burger-btn .header__burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.header__burger-checkbox:checked + .header__burger-btn .header__burger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}

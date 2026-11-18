@@ -1,0 +1,40 @@
+@use '../utils' as *;
+
+.section-header {
+  margin-bottom: rem(36);
+  text-align: center;
+
+  @include mq(md) {
+    margin-bottom: rem(48);
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: rem(8);
+    font-family: $font-script;
+    font-size: rem(24);
+    color: var(--color-accent);
+  }
+
+  &__title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: rem(14);
+    font-size: rem(28);
+
+    @include mq(md) {
+      font-size: rem(34);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: rem(48);
+      height: 3px;
+      background-color: var(--color-accent);
+      transform: translateX(-50%);
+    }
+  }
+}

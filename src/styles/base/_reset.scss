@@ -1,0 +1,72 @@
+@use '../utils' as *;
+
+:root {
+  @each $name, $value in $colors {
+    --color-#{$name}: #{$value};
+  }
+
+  --container-padding: #{rem(20)};
+  --section-spacing: #{rem(56)};
+
+  @include mq(md) {
+    --container-padding: #{rem(40)};
+    --section-spacing: #{rem(72)};
+  }
+
+  @include mq(lg) {
+    --container-padding: #{rem(90)};
+    --section-spacing: #{rem(90)};
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: $font-body;
+  font-size: rem(16);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+blockquote {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}

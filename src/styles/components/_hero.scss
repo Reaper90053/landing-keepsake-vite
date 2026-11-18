@@ -1,0 +1,63 @@
+@use '../utils' as *;
+
+.hero {
+  padding-block: rem(64);
+  background-color: var(--color-bg-secondary);
+  text-align: center;
+
+  @include mq(md) {
+    padding-block: rem(96);
+  }
+
+  @include mq(lg) {
+    padding-block: rem(120);
+  }
+
+  &__container {
+    max-width: rem(860);
+  }
+
+  &__eyebrow {
+    display: inline-block;
+    margin-bottom: rem(14);
+    font-family: $font-script;
+    font-size: rem(26);
+    color: var(--color-accent);
+  }
+
+  &__title {
+    margin-bottom: rem(20);
+    font-size: rem(34);
+
+    @include mq(md) {
+      font-size: rem(48);
+    }
+
+    @include mq(lg) {
+      font-size: rem(58);
+    }
+  }
+
+  &__subtitle {
+    max-width: rem(640);
+    margin: 0 auto rem(32);
+    font-size: rem(16);
+    color: var(--color-text-secondary);
+
+    @include mq(md) {
+      font-size: rem(18);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: rem(14);
+
+    @include mq(md) {
+      flex-direction: row;
+      justify-content: center;
+      gap: rem(16);
+    }
+  }
+}
