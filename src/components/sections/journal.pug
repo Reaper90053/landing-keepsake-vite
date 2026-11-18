@@ -11,8 +11,8 @@ section#journal.journal.section
             +picture(post.image, post.alt, true, '(min-width: 768px) 220px, 100vw')
           .journal-card__body
             .journal-card__meta
-              time.journal-card__date(datetime=post.datetime) #{post.date}
-              span.journal-card__category #{post.category}
+              time.journal-card__date(datetime=post.datetime) #{ post.date }
+              span.journal-card__category #{ post.category }
             h3.journal-card__title
-              a(href=`#post-${post.image}`) #{post.title}
-            p.journal-card__excerpt #{post.excerpt}
+              a(href=`#post-${post.image}`) #{ post.title }
+            p.journal-card__excerpt #{ post.excerpt }

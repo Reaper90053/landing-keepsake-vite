@@ -3,7 +3,7 @@ mixin work-card(work, isFirstScreen = false)
     .work-card__media
       +picture(work.image, work.alt, !isFirstScreen)
     .work-card__overlay
-      span.work-card__category #{work.category}
-      h3.work-card__title #{work.title}
+      span.work-card__category #{ work.category }
+      h3.work-card__title #{ work.title }
       a.work-card__link(href=`#work-${work.image}`, aria-label=`View project ${work.title}`)
         +icon('arrow-right', 20)

@@ -13,10 +13,10 @@ mixin btn(text, href, variant = 'primary')
       if block
         block
       else
-        | #{text}
+        | #{ text }
   else
-    button.btn(type="button", class=variantClass)&attributes(attributes)
+    button.btn(type='button', class=variantClass)&attributes(attributes)
       if block
         block
       else
-        | #{text}
+        | #{ text }

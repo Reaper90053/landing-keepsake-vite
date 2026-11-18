@@ -23,6 +23,7 @@
 
   &__burger-btn {
     @include flex-center(column, rem(5));
+
     width: rem(40);
     height: rem(40);
     cursor: pointer;
@@ -37,7 +38,9 @@
     width: rem(24);
     height: 2px;
     background-color: var(--color-text-primary);
-    transition: transform $transition-base, opacity $transition-base;
+    transition:
+      transform $transition-base,
+      opacity $transition-base;
   }
 
   &__actions {
@@ -61,6 +64,7 @@
 
   &__mark {
     @include flex-center;
+
     width: rem(34);
     height: rem(34);
     border-radius: rem(4);

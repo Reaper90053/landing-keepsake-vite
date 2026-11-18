@@ -1,27 +1,24 @@
 $colors: (
-  'bg-primary': #ffffff,
+  'bg-primary': #fff,
   'bg-secondary': #f8f9fa,
   'bg-dark': #22252a,
   'bg-card': #f3f4f6,
   'text-primary': #22252a,
   'text-secondary': #6c727f,
-  'text-light': #ffffff,
+  'text-light': #fff,
   'text-muted': #a0a6b2,
   'accent': #e85a4f,
   'accent-hover': #d6453a,
   'teal': #2a9d8f,
   'teal-hover': #218276,
   'border': #e5e7eb,
-  'border-dark': #373c44
+  'border-dark': #373c44,
 );
-
 $breakpoints: (
   'md': 768px,
-  'lg': 1280px
+  'lg': 1280px,
 );
-
 $font-heading: 'Oswald', sans-serif;
 $font-body: 'Open Sans', sans-serif;
 $font-script: 'Dancing Script', cursive;
-
 $transition-base: 0.25s ease;
