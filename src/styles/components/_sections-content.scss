@@ -74,13 +74,21 @@
   }
 
   &__avatar {
-    width: rem(56);
-    height: rem(56);
+    display: flex;
+    flex-shrink: 0;
+    width: rem(64);
+    height: rem(64);
     overflow: hidden;
     border-radius: 50%;
     background-color: var(--color-bg-card);
 
+    picture {
+      display: flex;
+      flex: 1;
+    }
+
     img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
