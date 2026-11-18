@@ -166,6 +166,7 @@
   }
 
   &__media {
+    display: flex;
     flex: 0 0 rem(180);
     background-color: var(--color-bg-card);
 
@@ -173,7 +174,11 @@
       flex: 0 0 rem(200);
     }
 
-    picture,
+    picture {
+      display: flex;
+      flex: 1;
+    }
+
     img {
       display: block;
       width: 100%;
