@@ -3,6 +3,8 @@ import pug from '@vituum/vite-plugin-pug'
 import path from 'path'
 import fs from 'node:fs'
 
+const BASE_PATH = '/landing-keepsake-vite/'
+
 function srcsetAssetsPlugin() {
   return {
     name: 'vite-plugin-srcset-assets',
@@ -24,7 +26,7 @@ function srcsetAssetsPlugin() {
                       name: imgName,
                       source: fs.readFileSync(diskPath),
                     })
-                    emitted.set(imgName, '/' + this.getFileName(refId))
+                    emitted.set(imgName, BASE_PATH + this.getFileName(refId))
                   } else {
                     return match
                   }
@@ -36,11 +38,20 @@ function srcsetAssetsPlugin() {
           })
         }
       }
+
+      if (bundle['index.pug.html']) {
+        bundle['index.html'] = {
+          ...bundle['index.pug.html'],
+          fileName: 'index.html',
+        }
+        delete bundle['index.pug.html']
+      }
     },
   }
 }
 
 export default {
+  base: BASE_PATH,
   build: {
     assetsInlineLimit: 0,
   },
