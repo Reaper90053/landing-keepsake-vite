@@ -1,29 +1,33 @@
-mixin picture(name, alt, isLazy = true, sizes = '(min-width: 1280px) 360px, (min-width: 768px) 50vw, 100vw')
+mixin picture(name, alt, isLazy = true, sizes = '(min-width: 1280px) 360px, (min-width: 768px) 50vw, 100vw', width = 800, height = 600)
   picture
     source(
       type="image/avif"
-      srcset=`/assets/images/${name}-400.avif 400w, /assets/images/${name}-800.avif 800w`
+      srcset=`/src/assets/images/${name}-400.avif 400w, /src/assets/images/${name}-800.avif 800w`
       sizes=sizes
     )
     source(
       type="image/webp"
-      srcset=`/assets/images/${name}-400.webp 400w, /assets/images/${name}-800.webp 800w`
+      srcset=`/src/assets/images/${name}-400.webp 400w, /src/assets/images/${name}-800.webp 800w`
       sizes=sizes
     )
     if isLazy
       img(
-        src=`/assets/images/${name}-800.jpg`
-        srcset=`/assets/images/${name}-400.jpg 400w, /assets/images/${name}-800.jpg 800w`
+        src=`/src/assets/images/${name}-800.jpg`
+        srcset=`/src/assets/images/${name}-400.jpg 400w, /src/assets/images/${name}-800.jpg 800w`
         sizes=sizes
         alt=alt
+        width=width
+        height=height
         loading="lazy"
         decoding="async"
       )&attributes(attributes)
     else
       img(
-        src=`/assets/images/${name}-800.jpg`
-        srcset=`/assets/images/${name}-400.jpg 400w, /assets/images/${name}-800.jpg 800w`
+        src=`/src/assets/images/${name}-800.jpg`
+        srcset=`/src/assets/images/${name}-400.jpg 400w, /src/assets/images/${name}-800.jpg 800w`
         sizes=sizes
         alt=alt
+        width=width
+        height=height
         fetchpriority="high"
       )&attributes(attributes)
